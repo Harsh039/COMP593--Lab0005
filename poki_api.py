@@ -1,15 +1,14 @@
 #import requests
-from dad_jokes_api import search_dad_jokes
-from pastebin_api import post_new_paste
+from poki_names_api import search_poki_names
 import sys
 
 def main():
     search_term = get_search_term()
-    jokes_list = search_dad_jokes(search_term)
-    if jokes_list:
+    poki_list = search_poki_names(search_term)
+    if poki_list:
         title, body_text = get_paste_content()
         paste_url = post_new_paste(title, body_text)
-        print(f'URL of jokes paste: {paste_url}')
+        print(f'URL of poki paste: {paste_url}')
 
 def get_search_term():
 
@@ -21,8 +20,8 @@ def get_search_term():
         print('Error: Missing search term')
         sys.exit(1)
 
-def get_paste_content(jokes_list, search term):
-    return #title, body_text
+def get_paste_content(poki_list, search term):
+    return None
 
 if __name__ == "__main__":
     main()
